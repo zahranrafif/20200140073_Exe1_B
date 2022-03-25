@@ -1,0 +1,134 @@
+package com.example.creatinglayout;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+public class ActivityKedua extends AppCompatActivity {
+    //mendeklarasikan variabel dengan tipe data TextView
+    TextView txEmail, enama;
+
+    //deklrasi variabel untuk EditText
+    EditText edtask1, edjenisTask1, edtimetask1;
+
+    //deklarasi variabel untuk menyimpan (task jtask ttask)
+    String task, jtask, ttask;
+
+            @Override
+            public boolean onCreateOptionsMenu(Menu menu) {
+                //Method untuk menampilkan menu.
+                getMenuInflater().inflate(R.menu.menu, menu);
+                return super.onCreateOptionsMenu(menu);
+            }
+
+            @Override
+            public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+                //Membuat kondisi jika dipilih adalah
+                if (item.getItemId() == R.id.simpan)
+                {
+                    //Method untuk memanggil activity Result.class
+                    Intent i = new Intent(getApplicationContext(), Result.class);
+                    startActivity(i);
+                }
+                else if (item.getItemId() == R.id.mlogout)
+                {
+                    //Method untuk memanggil activity ActivityKedua
+
+                    finish();
+                }
+                return super.onOptionsItemSelected(item);
+            }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_kedua);
+
+        //menghubungkan variabel edtask1,edjenisTask1, edtimetask1 dengan componen button pada layout
+        edtask1=findViewById (R.id.edtask);
+        edjenisTask1= findViewById(R.id.edjenisTask);
+        edtimetask1= findViewById(R.id.edtimetask);
+
+        //Menghubungkan variabel txEmail, enama dengan componen TextView pada Layout
+        txEmail = findViewById(R.id.hEmail);
+        enama = findViewById(R.id.hEmail2);
+
+        //membuat objek bundle dan mengambil data yang dikirimkan dari activity sebelumnya
+        Bundle bundle = getIntent().getExtras();
+
+        //Membuat variabel string yang digunakan untuk menyimpan data yang dikirimkan dari activity sebelumnya dengan kunci "a" dan kunci "b".
+        String email = bundle.getString("a");
+        String edtNama = bundle.getString("b");
+
+        //menampilkan value dari variabel email kedalam txEmail
+        txEmail.setText(email);
+        //menampilkan value dari variabel edtNama kedalam enama
+        enama.setText(edtNama);
+
+        FloatingActionButton fab = findViewById(R.id.simpan);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                task = edtask1.getText().toString();
+                jtask = edjenisTask1.getText().toString();
+                ttask = edtimetask1.getText().toString();
+
+                    edtask1.setError("Task Diperlukan");
+                    edjenisTask1.setError("Jenis Task Diperlukan");
+                    edtimetask1.setError("Time Task Diperlukan");
+
+                    Bundle bn = new Bundle();
+
+                    //memasukkan value dari variabel nama dengan kunci "a" dan dimasukkan kedalam bundle
+                    bn.putString("a", task.trim());
+
+                    //memasukkan value dari variabel password dengan kunci "b" dan dimasukkan kedalam bundle
+                    bn.putString("b", jtask.trim());
+
+                    //memasukkan value dari variabel password dengan kunci "b" dan dimasukkan kedalam bundle
+                    bn.putString("c", ttask.trim());
+
+                    //membuat objek intent berpindah activity ke ActivityKedua
+                    Intent i = new Intent(getApplicationContext(),Result.class);
+
+                    //memasukkan bundle kedalam intent untuk dikirimkan ke ActivityKedua
+                    i.putExtras(bn);
+
+                    //berpindah ke ActivityKedua
+                    startActivity(i);
+            }
+
+        });
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
