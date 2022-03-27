@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Result extends AppCompatActivity {
     //mendeklarasikan variabel dengan tipe data TextView
-    TextView HTask,HTask1,HTask2;
+    TextView RTask,RTask1,RTask2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,9 +15,9 @@ public class Result extends AppCompatActivity {
         setContentView(R.layout.hasil_activity); //ini buat nyambungin
 
         //Menghubungkan variabel txEmail dengan componen TextView pada Layout
-        HTask = findViewById(R.id.iniHasil);
-        HTask1 = findViewById(R.id.inijenis);
-        HTask2 = findViewById(R.id.iniWaktu);
+        RTask = findViewById(R.id.iniHasil);
+        RTask1 = findViewById(R.id.inijenis);
+        RTask2 = findViewById(R.id.iniWaktu);
 
         //membuat objek bundle dan mengambil data yang dikirimkan dari activity sebelumnya
         Bundle bundle = getIntent().getExtras();
@@ -28,8 +28,8 @@ public class Result extends AppCompatActivity {
         String task3 = bundle.getString("c");
 
         //menampilkan value dari variabel email kedalam txEmail
-        HTask.setText(task);
-        HTask1.setText(task2);
-        HTask2.setText(task3);
+        RTask.setText(task);
+        RTask1.setText(task2);
+        RTask2.setText(task3);
     }
 }

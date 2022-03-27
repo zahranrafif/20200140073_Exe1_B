@@ -21,10 +21,10 @@ public class ActivityKedua extends AppCompatActivity {
     TextView txEmail, enama;
 
     //deklrasi variabel untuk EditText
-    EditText edtask1, edjenisTask1, edtimetask1;
+    EditText ktask, kjtask, kttask;
 
     //deklarasi variabel untuk menyimpan (task jtask ttask)
-    String task, jtask, ttask;
+    String task, jenisT, timeT;
 
             @Override
             public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,9 +57,9 @@ public class ActivityKedua extends AppCompatActivity {
         setContentView(R.layout.activity_kedua);
 
         //menghubungkan variabel edtask1,edjenisTask1, edtimetask1 dengan componen button pada layout
-        edtask1=findViewById (R.id.edtask);
-        edjenisTask1= findViewById(R.id.edjenisTask);
-        edtimetask1= findViewById(R.id.edtimetask);
+        ktask=findViewById (R.id.edtask);
+        kjtask= findViewById(R.id.edjenisTask);
+        kttask= findViewById(R.id.edtimetask);
 
         //Menghubungkan variabel txEmail, enama dengan componen TextView pada Layout
         txEmail = findViewById(R.id.hEmail);
@@ -81,13 +81,13 @@ public class ActivityKedua extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                task = edtask1.getText().toString();
-                jtask = edjenisTask1.getText().toString();
-                ttask = edtimetask1.getText().toString();
+                task = ktask.getText().toString();
+                jenisT = kjtask.getText().toString();
+                timeT = kttask.getText().toString();
 
-                    edtask1.setError("Task Diperlukan");
-                    edjenisTask1.setError("Jenis Task Diperlukan");
-                    edtimetask1.setError("Time Task Diperlukan");
+                ktask.setError("Task Diperlukan");
+                kjtask.setError("Jenis Task Diperlukan");
+                kttask.setError("Time Task Diperlukan");
 
                     Bundle bn = new Bundle();
 
@@ -95,10 +95,10 @@ public class ActivityKedua extends AppCompatActivity {
                     bn.putString("a", task.trim());
 
                     //memasukkan value dari variabel password dengan kunci "b" dan dimasukkan kedalam bundle
-                    bn.putString("b", jtask.trim());
+                    bn.putString("b", jenisT.trim());
 
                     //memasukkan value dari variabel password dengan kunci "b" dan dimasukkan kedalam bundle
-                    bn.putString("c", ttask.trim());
+                    bn.putString("c", timeT.trim());
 
                     //membuat objek intent berpindah activity ke ActivityKedua
                     Intent i = new Intent(getApplicationContext(),Result.class);

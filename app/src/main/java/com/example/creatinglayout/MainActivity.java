@@ -65,17 +65,21 @@ public class MainActivity extends AppCompatActivity {
                 String pass="tanyajaran";
 
                 //Mengecek apakah edittext email dan password sesuai atau tidak (valid atau tidak) isinya
-                if (nama.equals(Email) && password.equals(pass)){
-                    // Pesan error tidak boleh kosong
-                    edemail.setError("Nama Diperlukan");
+
+                if (nama.length()==0){
+                    edemail.setError("Nama diperlukan");
+                }
+                else if (password.length()==0){
+                    Toast.makeText(MainActivity.this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                }
+                else if (nama.equals(Email) && password.equals(pass)){
                     Toast.makeText(MainActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
 
-                    //inisiasi
+                    //inisiasi Bunddle
                     Bundle bn = new Bundle();
 
                     //memasukkan value dari variabel nama dengan kunci "a" dan dimasukkan kedalam bundle
                     bn.putString("a", nama.trim());
-
 
                     //membuat objek intent berpindah activity dari mainactivity ke ActivityKedua
                     Intent i = new Intent(MainActivity.this,ActivityKedua.class);
@@ -85,14 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
                     //berpindah ke ActivityKedua
                     startActivity(i);
-                }
-                else if (password.equals(pass)){
-                    //jika Email salah dimasukkan
-                    Toast.makeText(MainActivity.this, "Email yang anda masukkan salah", Toast.LENGTH_SHORT).show();
-                }
-                else if (nama.equals(Email)){
-                    //jika Password salah dimasukkan
-                    Toast.makeText(MainActivity.this, "Password Salah", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     // Pesan error tidak boleh kosong

@@ -37,13 +37,13 @@
         android:id="@+id/iniHasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/HTask"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -76,7 +76,7 @@
         android:id="@+id/inijenis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:hint="@string/HTaskJenis2"
         android:text="@string/HTaskJenis2"
         android:textColor="@color/black"
@@ -84,7 +84,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

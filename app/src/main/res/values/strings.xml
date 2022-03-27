@@ -37,6 +37,11 @@
     <string name="task3">Task</string>
     <string name="textview">TextView</string>
     <string name="name">Name</string>
+    <string name="test">Test input</string>
+    <string name="pencetan">Register</string>
+    <string name="gambar">gambar</string>
+    <string name="submit">Submit</string>
+    <string name="taskgambar">taskgambar</string>
     <string name="time_task">Time Task</string>
     <string name="hEmail">Nama Anda</string>
     <string name="hEmail2">Nama Anda</string>
@@ -46,10 +51,6 @@
     <string name="HTaskTime">Time Task Result</string>
     <string name="task4">Waktu Task</string>
     <string name="name2">Name</string>
-    <string name="test">Test input</string>
-    <string name="pencetan">Register</string>
-    <string name="gambar">gambar</string>
-    <string name="submit">Submit</string>
-    <string name="taskgambar">taskgambar</string>
+
 
 </resources>
