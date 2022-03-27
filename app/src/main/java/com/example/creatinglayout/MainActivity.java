@@ -18,14 +18,12 @@ public class MainActivity extends AppCompatActivity {
 
     //ini adalah project yang dipakai untuk 4 activity
 
-    //deklarasi variabel untuk button
-    Button btnLogin, btnRegister;
-
-    //deklrasi variabel untuk EditText
-    EditText edemail, edpassword;
-
     //deklarasi variabel untuk menyimpan email dan password
     String nama, password;
+    //deklarasi variabel untuk button
+    Button btnLogin, btnRegister;
+    //deklrasi variabel untuk EditText
+    EditText edemail, edpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     edemail.setError("Nama diperlukan");
                 }
                 else if (password.length()==0){
-                    Toast.makeText(MainActivity.this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Password Harus Diisi", Toast.LENGTH_SHORT).show();
                 }
                 else if (nama.equals(Email) && password.equals(pass)){
                     Toast.makeText(MainActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();

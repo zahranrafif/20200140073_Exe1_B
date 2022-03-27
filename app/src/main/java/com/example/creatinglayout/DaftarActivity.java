@@ -2,18 +2,13 @@ package com.example.creatinglayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class DaftarActivity extends AppCompatActivity {
@@ -29,11 +24,11 @@ public class DaftarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.daftar_activity);
-        textnama = findViewById(R.id.edNama);
-        textemail = findViewById(R.id.edEmail2);
-        textpassw = findViewById(R.id.edPass);
-        textrepass = findViewById(R.id.edrepas);
-        Bsimpan = findViewById(R.id.buttonSave);
+        textnama = findViewById(R.id.mName);
+        textemail = findViewById(R.id.mEmail);
+        textpassw = findViewById(R.id.mPass);
+        textrepass = findViewById(R.id.mRepass);
+        Bsimpan = findViewById(R.id.buttonSimp);
 
         //membuat method untuk event dari button
         Bsimpan.setOnClickListener(new View.OnClickListener() {

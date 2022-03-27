@@ -45,7 +45,7 @@ public class ActivityKedua extends AppCompatActivity {
                 else if (item.getItemId() == R.id.mlogout)
                 {
                     //Method untuk memanggil activity ActivityKedua
-
+                    Intent i = new Intent(getApplicationContext(), ActivityKedua.class);
                     finish();
                 }
                 return super.onOptionsItemSelected(item);

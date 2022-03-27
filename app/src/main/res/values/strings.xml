@@ -34,9 +34,6 @@
     <string name="task5">Must Todo</string>
     <string name="task">Task</string>
     <string name="task2">Jenis Task</string>
-    <string name="task3">Task</string>
-    <string name="textview">TextView</string>
-    <string name="name">Name</string>
     <string name="test">Test input</string>
     <string name="pencetan">Register</string>
     <string name="gambar">gambar</string>
@@ -47,6 +44,9 @@
     <string name="hEmail2">Nama Anda</string>
     <string name="simpan">Save</string>
     <string name="HTask">Task Result</string>
+    <string name="task3">Task</string>
+    <string name="textview">TextView</string>
+    <string name="name">Name</string>
     <string name="HTaskJenis2">Jenis Task Result</string>
     <string name="HTaskTime">Time Task Result</string>
     <string name="task4">Waktu Task</string>
