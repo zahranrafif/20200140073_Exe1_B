@@ -22,25 +22,24 @@ public class DaftarActivity extends AppCompatActivity {
     EditText textnama, textemail, textpassw, textrepass;
 
     //Deklarasi variabel dengan tipe data button action button
-    Button save;
-    String nama;
+    Button Bsimpan;
+    String name; //untuk menerima nama
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.daftar_activity);
-
         textnama = findViewById(R.id.edNama);
         textemail = findViewById(R.id.edEmail2);
         textpassw = findViewById(R.id.edPass);
         textrepass = findViewById(R.id.edrepas);
-        save = findViewById(R.id.buttonSave);
+        Bsimpan = findViewById(R.id.buttonSave);
 
         //membuat method untuk event dari button
-        save.setOnClickListener(new View.OnClickListener() {
+        Bsimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nama = textnama.getText().toString();
+                name = textnama.getText().toString();
 
                 if (textnama.getText().toString().length() == 0)
                     textnama.setError("Nama belum diinput");
@@ -58,13 +57,12 @@ public class DaftarActivity extends AppCompatActivity {
                         //inisiasi
                         Bundle bn = new Bundle();
 
-                        //memasukkan value dari variabel nama dengan kunci "b" dan dimasukkan kedalam bundle
-                        bn.putString("b", nama.trim());
+                        //memasukkan value dari variabel nama dengan kunci "b" dan dimasukkan ke dalam bundle
+                        bn.putString("b", name.trim());
 
                         //Menampilkan pesan notifikasi jika Register Sukses
                         Toast.makeText(getApplicationContext(), "Register Sukses",
                                 Toast.LENGTH_LONG).show();
-
                         Intent i = new Intent(getApplicationContext(), ActivityKedua.class);
                         i.putExtras(bn);
                         startActivity(i);
@@ -72,7 +70,7 @@ public class DaftarActivity extends AppCompatActivity {
                     else
                     {
                         //Menampilkan pesan bahwa isi dari EditText password dan EditText repassword tidak sama
-                        Snackbar.make(v, "Password Incorrect", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "Password Tidak Sama", Snackbar.LENGTH_LONG).show();
                     }
                 }
             }
