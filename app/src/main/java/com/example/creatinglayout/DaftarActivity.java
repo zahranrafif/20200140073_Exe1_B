@@ -56,7 +56,6 @@ public class DaftarActivity extends AppCompatActivity {
                     {
                         //inisiasi
                         Bundle bn = new Bundle();
-
                         //memasukkan value dari variabel nama dengan kunci "b" dan dimasukkan ke dalam bundle
                         bn.putString("b", name.trim());
 
